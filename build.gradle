@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 34
+    namespace "com.abemart.wroup"  // Replace with your actual package name (e.g., com.example.library)
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // No applicationId needed, since this is a library
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false  // Disable code shrinking for now
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // This ensures the output is an AAR file
+    publishing {
+        singleVariant("release")
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Testing dependencies
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.5.1') {
+        exclude group: 'androidx.annotation', module: 'annotation'
+    }
+
+    // AndroidX support
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    testImplementation 'junit:junit:4.13.2'
+
+    // Other dependencies
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'commons-io:commons-io:2.11.0'
+}
+
+buildscript {
+    repositories {
+        google()  // Google's Maven repository for Android Gradle Plugin
+        mavenCentral()  // Central repository for other dependencies
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0'  // Use the latest AGP version
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
