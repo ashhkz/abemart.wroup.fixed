@@ -1,5 +1,5 @@
 
-Just do gradle build and it should generate aar file and an existing aar file is already included in the files
+Just do gradle build and it should generate aar file and an existing aar file is already included in the output folder
 
 
 
