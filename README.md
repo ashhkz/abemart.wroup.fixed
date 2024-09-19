@@ -18,7 +18,7 @@ Wroup is a WiFi P2P Android Library, or also know as WiFi Direct. This library a
     * [Server device](#server-device)
     * [Client device](#client-device)
     * [Sending messages](#sending-messages)
-* [Example App](#example-app)
+
 * [Contributing](#contributing)
 * [License](#license)
 
