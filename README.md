@@ -182,8 +182,6 @@ wroupClient.disconnect();
 ```
 
 
-## Example App
-If you have see the library in action you can dowload the [Wroup-Example](https://github.com/ble180/Wroup-Example) project. It's a chat application with you can create a group (server) and other devices (clients) can be join to the group and have a conversation.
 
 ## Contributing
 Feel free to submit issues, requests, or fork the project.
